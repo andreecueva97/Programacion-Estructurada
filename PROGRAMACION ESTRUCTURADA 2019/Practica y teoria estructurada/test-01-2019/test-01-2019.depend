@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1575324219 source:c:\users\andre\documents\materias cursadas\practica y teoria estructurada\test-01-2019\main.c
+	<stdio.h>
+	<stdlib.h>
+

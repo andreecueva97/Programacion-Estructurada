@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1574734265 source:c:\users\andre\documents\materias cursadas\practica y teoria estructurada\final-01-dic-2016-a-parte1y2\main.c
+	<stdio.h>
+	<stdlib.h>
+

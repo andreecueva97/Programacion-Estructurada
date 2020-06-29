@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1552957353 source:/home/lucas/Desktop/Ejercicios/Ejercicio2/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1553397375 source:/home/lucas/Desktop/programacionEstructurada/Ejercicios/Ejercicio2/main.c
+	<stdio.h>
+	<stdlib.h>
+

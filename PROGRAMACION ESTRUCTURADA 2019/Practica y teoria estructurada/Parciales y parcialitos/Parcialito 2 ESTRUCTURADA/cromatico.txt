@@ -1,0 +1,8 @@
+Blanco,16777215
+Negro,0
+Rojo,16711680
+Fucsia,14166219
+Amarillo,16776960
+Celeste,972786
+Azul,3439329039
+color x,245612350

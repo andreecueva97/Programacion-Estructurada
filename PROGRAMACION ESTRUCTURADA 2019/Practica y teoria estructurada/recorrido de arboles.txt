@@ -1,0 +1,34 @@
+void preorder(t_nodo_bin arbol)
+{
+	if(arbol!=NULL)
+	{
+		printf("%d -",arbol->valor);//visita padre
+		preorder(t_nodo_bin arbol->izq);//recorre subarbol izq
+		preorder(t_nodo_bin arbol->der);//recorre subarbol der
+	}
+}
+
+void inorder(t_nodo_bin arbol)  //permite la IMPRESION ORDENADA
+{
+	if(arbol!=NULL)
+	{
+		inorder(t_nodo_bin arbol->izq);	
+		printf("%d -",arbol->valor);
+		inorder(t_nodo_bin arbol->der);
+	}
+}
+
+
+
+void postorder(t_nodo_bin arbol)
+{
+	if(arbol!=NULL)
+	{
+		postorder(t_nodo_bin arbol->izq);
+		postorder(t_nodo_bin arbol->der);
+		printf("%d -",arbol->valor);
+		
+	}
+}
+
+buscar profundidad y nivel de un arbol

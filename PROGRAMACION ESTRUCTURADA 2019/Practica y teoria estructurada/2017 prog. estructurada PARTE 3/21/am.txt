@@ -1,0 +1,4 @@
+17002,juan,rodriguez
+170050,maria,perez
+170125,lorena,ledesma
+170245,tomas,garcia

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1574292672 source:c:\users\andre\documents\codeblock, prog. estruct\3 final       13 julio 2017\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+

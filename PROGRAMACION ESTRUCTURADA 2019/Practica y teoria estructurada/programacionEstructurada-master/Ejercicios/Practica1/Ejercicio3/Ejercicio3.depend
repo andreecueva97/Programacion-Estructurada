@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1553515473 source:c:\users\alumno\desktop\ejercicio3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1553515473 
+
+1553563819 source:/home/lucas/Desktop/programacionEstructurada/Ejercicios/Ejercicio3/main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1553556943 /home/lucas/Desktop/programacionEstructurada/Ejercicios/Ejercicio3/conio.h
+	<termios.h>
+	<stdio.h>
+
+1553563819 source:/home/lucas/Desktop/programacionEstructurada/Ejercicios/Practica1/Ejercicio3/main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
