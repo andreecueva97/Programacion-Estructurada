@@ -1,0 +1,135 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//int ingresar(char msj[]);              /** Declaración de la cabecera de la funcion*/
+
+void imprimir(char msj[],double valor);
+int aleatorio(int inf, int sup);
+
+int maxi(int a, int b);
+int mini(int a, int b);
+
+int main() {
+    srand(time(NULL));          /** Seteo de la semilla del generador de valores aleatorios*/
+
+    //caso01();                   /**Se generan número y se determina el maximo y el mínimo*/
+    caso02();
+
+    return 0;
+}
+
+void caso01(){
+    int x,y;
+    x=aleatorio(-1000,10);
+    y=aleatorio(10,200);
+
+    printf("CASO01: Se generan dos numeros aleatorios  y\n\tse determina el maximo y el minimo\n");
+
+    imprimir("X es: ",x);
+    imprimir("Y es: ",y);
+
+    imprimir("El minimo es",mini(x,y));
+    imprimir("El maximo es",maxi(x,y));
+
+}
+
+void caso02(){
+    int x,y;
+    double val;             // número a evaluar
+    x=aleatorio(-40,40);
+    y=aleatorio(1,40);
+
+    val = x/(double)y;
+
+    //printf("CASO01: Se generan dos numeros aleatorios  y\n\tse determina el maximo y el minimo\n");
+    imprimir("X es: ",x);
+    imprimir("Y es: ",y);
+    imprimir("VAL=x/y es: ",val);
+
+
+}
+
+void evaluar(double num){
+
+    if (num==0){
+        printf("Neutro - ");
+    }
+    else{
+        if (num<0){
+            printf("Negativo - ");
+
+        }
+        else{
+            printf("Positivo - ");
+
+        }
+        tipo(num);
+    }
+
+}
+
+void tipo(double num){
+
+    int ent;
+    double dec;
+    ent = (int)num;          /** Extrae parte entera de num*/
+    dec = num - ent;         /** Extrae parte decimal de num*/
+
+    if (dec == 0){
+        if (ent >=){
+            printf("Entero y Natural - ");
+        }
+        else {
+            printf("Entero - ");
+        }
+
+    }
+    else{
+
+        printf("Real - ");
+    }
+
+
+}
+
+
+int mini(int a, int b){
+    int res;
+    if (a>b){
+        res = b;
+    }
+    else{
+        res = a;
+    }
+    return res;
+}
+int maxi(int a, int b){
+    int res;
+    if (a<b){
+        res = b;
+    }
+    else{
+        res = a;
+    }
+    return res;
+}
+
+int aleatorio(int inf, int sup){
+    return inf + (rand() % (sup-inf+1));
+}
+void imprimir(char msj[],double valor){ /**Codigo de la funcion*/
+    printf("%s %lf\n",msj,valor);
+}
+
+
+/*
+int ingresar(char msj[]){
+    int aux;
+    printf("%s",msj);
+    scanf("%d",&aux);
+    return aux;
+}
+*/
+
+
+

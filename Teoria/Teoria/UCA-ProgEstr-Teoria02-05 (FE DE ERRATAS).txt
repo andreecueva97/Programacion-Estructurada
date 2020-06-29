@@ -1,0 +1,15 @@
+- - - - - - - - - - - - - - - - - -
+Pagina 51
+En el ejemplo de cola ....
+
+DONDE DICE
+
+	nodo->valor = valor;
+	nodo->sig = NULL;
+
+DEBE DECIR
+
+	aux->valor = valor
+	aux->sig = NULL;
+
+- - - - - - - - - - - - - - - - - -

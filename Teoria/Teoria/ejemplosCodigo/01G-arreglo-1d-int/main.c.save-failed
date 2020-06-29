@@ -1,0 +1,157 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define INF 0
+#define SUP 99
+#define TIPO_MAY 0
+#define TIPO_MIN 1
+#define TIPO_MAY_MIN 2
+
+#define TAM 20
+#define TERM_I 0                /**Elemento entero (int) para indicar el fin de nuemro utiles en el arreglo*/
+
+/**
+IMPORTANTE:
+    Los arreglos de numeros no tienen por definicion un elemento terminador (es decir un elemento que indique
+    el finde los elemnentos útiles).
+    NOSOTROS, tendremos como convención indicar con un número, que no pertenezca al dominio de datos, el fin
+    de los datos útiles del arreglo. Lo llamaremos  dicho número elemento teminador.
+    Para el caso definimos la constante TERM_I.
+    Es mandatorio que el valor del terminador NO pertenezca al dominio de los datos útiles.
+
+*/
+
+int aleatorio(int inf, int sup);
+void cargarArrI(int arr[TAM]);
+void imprimirArrI(int arr[TAM]);
+void cargarArrIAle(int arrS[TAM]);
+
+
+void caso01();
+void caso02();
+
+
+int main() {
+    srand(time(NULL));          /** Seteo de la semilla del generador de valores aleatorios*/
+    printf("\nARREGLOS\n");
+
+    printf("\n------------- ----------------\n");
+    caso01();
+/**
+    printf("\n------------- ----------------\n");
+    caso02();
+*/
+    printf("\n-------------  ---------------\n");
+
+    return 0;
+}
+
+void caso01(){
+
+    printf("CASO01: Cargar una arreglo de numeros entero desde el teclado \n");
+
+    int arrI[TAM]={0};                  /** Se define el arreglo nombre y se lo inicializa con 0 en todas sus posiciones */
+    cargarArrI(arrI);                   /** Carga arreglo desde teclado*/
+    printf("El arreglo cargado contiene: -> ");
+    imprimirArrI(arrI);                 /** Imprime arreglo*/
+}
+
+
+void caso02(){
+
+    printf("CASO02: Cargar una arreglo de numeros enter \n\t con numeros aleatorios y de tamanio aleatorio \n");
+
+    int miArrI[TAM]={0};
+    cargarArrIAle(miArrI);
+    printf("El arreglo cargado contiene: -> ");
+    imprimirArrI(miArrI);
+
+}
+
+void imprimirArrI(int arrI[TAM]){
+
+    /** El arreglo se imprime recorriendolo con un ciclo*/
+
+    int i;
+    printf("\n");
+    for (i=0; arrI[i]!='\0';i++){
+            printf("%c",arrI[i]);
+    }
+    printf("\n");
+
+}
+
+
+void cargarArrI(int arrI[TAM]){
+
+    /**Se carga el arreglo de numeros hasta que el usuario ingrese un 0 (cero) desde
+     el teclado, que es el valor del elemento terminados TERM_I*/
+     /** Por una cuestion de convención (NUESTRA), le colocamos el valor del número terminador,*/
+     /** como elemento terminador indicando el fin de los datos utiles del arreglo.*/
+
+    int i=0;
+    int aux;
+    printf("Ingrese contenido: ");
+
+    if(i<TAM-1)
+        scanf("%d",&aux);               /** Leer desde el teclado*/
+    while(aux!=TERM_I && i<TAM-1){      /** hasta que el usuaior ingrese 0 cero (que es TERM_I)*/
+                                        /** Se debe controlar no pasarse del tamanio TAM*/
+        arrI[i] = aux;                  /** Asignar valor al arreglo en la posición i*/
+        i++;                            /** cambia posicion del arreglo / i es variable de control */
+        if(i<TAM-1)
+            scanf("%d",&aux);           /** Leer desde el teclado*/
+    }
+    arrI[i]=TERM_I;                     /** Por una cuestion de convención, le colocamos el valor del número terminador,*/
+                                        /** como elemento terminador indicando el fin de los datos utiles del arreglo.*/
+}
+
+void cargarArrIAle(int arrC[TAM]){
+    /**Carga un arreglo de caracteres con caracteres aleatorios y su tamanio es aleatorio < TAM*/
+
+    int i=0;
+    int aux;
+    int cantCar = aleatorio(0,TAM-2);       /** derterminar la cantidad de caracteres utiles a cargar*/
+
+    if(i<TAM-1)
+        aux = aleatorioL(TIPO_MAY_MIN);     /** generar letra aleatoria y guardar en aux*/
+    while(i<=cantCar && i<TAM-1){           /**i<=cantCar Se controla la cantidad de caracatreres cargados */
+                                            /** Se debe controlar no pasasrse del tamanio TAM*/
+        arrC[i] = aux;                      /** Asignar caracter al arreglo arrC en la posición i*/
+        i++;                                /** cambia posicion del arreglo / es variable de control */
+        if(i<TAM-1)
+            aux = aleatorioL(TIPO_MAY_MIN); /** generar letra aleatoria y guardar en aux*/
+    }
+    arrC[i]='\0';                           /** Las cadenas de caracteres 'string' siempre contienen el caracter'\0'*/
+                                            /** como elemento terminador indicando el fin de los datos utiles del arreglo.*/
+
+}
+
+int aleatorio(int inf, int sup){
+    /** Genera un numero aleatorio entre inf y sup (ambos extremos incluidos)*/
+    return inf + (rand() % (sup-inf+1));
+}
+
+int aleatorioL(int tipo){
+
+    /** Genera una Letra del abecedario */
+    int res;
+    if (tipo==TIPO_MAY){                /**Mayuscula en forma aleatoria*/
+        res= aleatorio(65,90);          /**Mayuscula*/
+    }
+    else if(tipo==TIPO_MIN){            /**minuscula en forma aleatoria*/
+        res= aleatorio(97,122);         /**minuscula*/
+    }
+    else if(tipo==TIPO_MAY_MIN){        /**Mayuscula y/o minuscula en forma aleatoria*/
+        if (aleatorio(0,1)==0){
+            res= aleatorio(65,90);      /**Mayuscula*/
+        }
+        else{
+            res= aleatorio(97,122);     /**minuscula*/
+        }
+    }
+    else{
+        res=0;
+    }
+    return res;
+}

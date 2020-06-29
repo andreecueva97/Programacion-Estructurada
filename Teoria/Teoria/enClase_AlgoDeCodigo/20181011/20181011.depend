@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1539283836 source:c:\users\asus\google drive\nube\docencia\uca\_materias\2018\materias (1)\programacion estructurada\2018-uca-progestru[alumnos]\teoria\enclase\20181011\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

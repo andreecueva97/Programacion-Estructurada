@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1562994832 source:c:\users\asus\google drive\nube\docencia\uca\_materias\03 programacion estructurada\teoría\ejemplocodigo2\02c-operadores\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1562996471 source:c:\users\asus\google drive\nube\docencia\uca\_materias\03 programacion estructurada\teoría\ejemplocodigo2\02d-funciones\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1562998568 source:c:\users\asus\google drive\nube\docencia\uca\_materias\03 programacion estructurada\teoría\ejemplocodigo2\02d-funcion-libreria - random\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1563032972 source:c:\users\asus\google drive\nube\docencia\uca\_materias\03 programacion estructurada\teoría\ejemplocodigo2\02e-condicional\main.c
+	<stdio.h>
+	<stdlib.h>
+

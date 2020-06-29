@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define T 10
+#define KEY_ESC 27
+/**
+* CREA UN ARCHIVO BINARIO Y PERMITE ESCRIBIR UNA ARREGLO EN EL.
+* LUEGO SE LEE EL ARCHIVO Y SE IMPRIME EL ARREGLOS
+*
+*/
+
+FILE* abrirArchivo(char nomArch[T],char modo[]);
+int escribirArchivo(FILE* fp, unsigned int valores[T]);
+int leerArchivo(FILE* fp);
+int cargarVector(char arr[]);
+int imprimirVector(char arr[]);
+int cerrarArchivo(FILE* fp);
+
+int main()
+{
+    unsigned int valores[T] = { 25, 12, 45, 345, 512, 345, 654, 287, 567, 124 };
+
+    FILE *fp;                       /** puntero al archivo*/
+    char nombre[11] = "prueba.dat"; /** nombre del archivo*/
+    fp=abrirArchivo(nombre,"w+");   /** abrir el archivo de escritura / lectura*/
+    escribirArchivo(fp,valores);
+    rewind( fp ); /** vuelve el puntero del archivo al inicio del mismo*/
+    leerArchivo(fp);
+    cerrarArchivo(fp);
+
+    return 0;
+}
+
+FILE* abrirArchivo (char nomArch[T],char modo[])
+{
+     return fopen(nomArch, modo);
+}
+
+int escribirArchivo(FILE* fp, unsigned int valores[T])
+{    /** escribie en un archivo binario
+        el contenido del arreglo pasado por parametro
+    */
+    int i;
+
+    printf( "Escribiendo en el archivo las cantidades:\n\n" );
+    for( i=0; i<T; i++ )
+      printf( "%d\t", valores[i] );
+    fwrite( valores, sizeof(unsigned int), T, fp ); /** ver detalles de los parametros*/
+    /**
+        Parametros "fwrite"
+        1) puntero de los Valores a leer (es la fuente de datos)
+        2) Tamanio en byte de cada elemento a escribir
+        3) cantidad de elementos a escribir
+        4) puntero del fichero a escribir (es el destino de los datos)
+    */
+    return 0;
+
+}
+int leerArchivo(FILE* fp)
+{
+    unsigned int leer[T], i;
+    printf( "\n\n\nLeyendo los datos del archivo \"%s\":\n");
+
+    fread( leer, sizeof(unsigned int), T, fp );
+
+    /**
+    Parametros
+    1) puntero de los Valores a escribir
+    2) Tamanio en byte de cada elemento a leer
+    3) cantidad de elementos a leer
+    4) puntero del fichero a leer
+    */
+
+    for( i=0; i<10; i++ )
+      printf( "%d\t", leer[i] );
+    return 0;
+}
+
+int cerrarArchivo(FILE* fp)
+{
+    fclose(fp);
+    return 0;
+}

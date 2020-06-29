@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//int ingresar(char msj[]);
+void imprimir(char msj[],double valor);
+int aleatorio(int inf, int sup);
+
+void caso03();
+void caso04();
+
+int main() {
+    srand(time(NULL));          /** Seteo de la semilla del generador de valores aleatorios*/
+
+    printf("-------------Condicional Simple----------------\n");
+    caso01();                   /**Se generan dos números y se determina el maximo y el mínimo*/
+
+    printf("-------------Condicional Anidada---------------\n");
+    caso02();                   /**Se evalua si un numero es Neutro, Positivo , Negativos, Enetero, Natural, Real */
+
+    printf("----------------------------------------------\n");
+    return 0;
+}
+
+void caso03(){
+    /**Condicional if , else if*/
+    int x;
+    x=aleatorio(0,9);
+    printf("CASO03: Condicional if , else if \n");
+
+    if (x==0){
+        printf("(%d): CERO",x;
+    }
+    else if (x==1){
+        printf("(%d): UNO",x;
+    }
+    else if (x==2){
+        printf("(%d): DOS",x;
+    }
+    else if (x==3){
+        printf("(%d): TRES",x;
+    }
+    else if (x==4){
+        printf("(%d): CUATRO",x;
+    }
+    else if (x==5){
+        printf("(%d): CINCO",x;
+    }
+    else if (x==6){
+        printf("(%d): SEIS",x;
+    }
+    else if (x==7){
+        printf("(%d): SIETE",x;
+    }
+    else if (x==8){
+        printf("(%d): OCHO",x;
+    }
+    else if (x==9){
+        printf("(%d): NUEVE",x;
+    }
+
+}
+
+void caso04(){
+    /** case */
+    int x;
+    x=aleatorio(0,9);
+    printf("CASO04: case\n");
+}
